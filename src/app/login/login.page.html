@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Create Account</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-label position="stacked">Email<ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input
+            #inputEmail
+            formControlName="email"
+            type="email"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"
+            >Password <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div class="ion-padding">
+        <ion-button
+          [disabled]="!myForm.valid"
+          expand="block"
+          type="submit"
+          class="ion-no-margin"
+          >Login
+        </ion-button>
+      </div>
+    </form>
+  </ion-content>
+</ion-app>
