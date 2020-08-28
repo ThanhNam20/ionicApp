@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  token: string = localStorage.getItem('token_id');
   constructor() {}
-
 }

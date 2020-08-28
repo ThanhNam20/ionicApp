@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     private firebase: FirebaseX
   ) {
     // tslint:disable-next-line:no-debugger
-    debugger;
     this.initializeApp();
   }
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes, CanActivate } from '@angular/router';
 import { AuthGuardService } from './service/auth-guard.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
     path: 'user/:id',
     loadChildren: './user-info/user-info.module#UserInfoPageModule',
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'google-login',
+    loadChildren: () => import('./google-login/google-login.module').then( m => m.GoogleLoginPageModule)
   }
 ];
 
@@ -27,6 +32,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppRoutingModule { }
