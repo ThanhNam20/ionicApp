@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
     FirebaseX,
-    GooglePlus
+    GooglePlus,
+    Camera,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

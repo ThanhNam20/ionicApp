@@ -24,7 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'google-login',
-    loadChildren: () => import('./google-login/google-login.module').then( m => m.GoogleLoginPageModule)
+    loadChildren: './google-login/google-login.module#GoogleLoginPageModule',
+  },
+  {
+    path: 'camera',
+    loadChildren: './camera/camera.module#CameraPageModule'
   }
 ];
 

@@ -23,5 +23,4 @@ export class UserService {
   getDataUser() {
     return this.http.get(this.dataUrl, httpOptions);
   }
-
 }

@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@auth0/angular-jwt": "^5.0.1",
-    "@capacitor/core": "2.4.0",
+    "@ionic-native/camera": "^5.28.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/firebase-x": "^5.28.0",
     "@ionic-native/google-plus": "^5.28.0",
@@ -29,6 +29,7 @@
     "@ionic/angular": "^5.0.0",
     "cordova-android": "9.0.0",
     "cordova-plugin-googleplus": "8.5.0",
+    "cordova-plugin-splashscreen": "^6.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -39,7 +40,6 @@
     "@angular/compiler": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
     "@angular/language-service": "~10.0.0",
-    "@capacitor/cli": "2.4.0",
     "@ionic/angular-toolkit": "^2.3.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -47,11 +47,11 @@
     "codelyzer": "^6.0.0",
     "cordova-plugin-androidx": "^2.0.0",
     "cordova-plugin-androidx-adapter": "^1.1.1",
+    "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-firebasex": "^10.2.0-cli",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
-    "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "jasmine-core": "~3.5.0",
@@ -81,7 +81,8 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "289788984244-m2rarlp41kqn1rq7nrl3khdudug0poit.apps.googleusercontent.com",
         "PLAY_SERVICES_VERSION": "15.0.1"
-      }
+      },
+      "cordova-plugin-camera": {}
     },
     "platforms": [
       "android"
