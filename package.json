@@ -30,6 +30,7 @@
     "cordova-android": "9.0.0",
     "cordova-plugin-googleplus": "8.5.0",
     "cordova-plugin-splashscreen": "^6.0.0",
+    "firebase": "^7.19.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
