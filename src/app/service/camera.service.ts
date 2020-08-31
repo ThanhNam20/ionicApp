@@ -1,13 +1,16 @@
+import { async } from '@angular/core/testing';
 import { Injectable } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { imageFireStorage, imageStorage } from '../../../firebase/config';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CameraService {
   constructor(private camera: Camera) { }
-  image: any ;
+  image: any;
   setAvatar() {
     const options: CameraOptions = {
       quality: 70,
@@ -15,9 +18,10 @@ export class CameraService {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
     };
-    this.camera.getPicture(options).then((imageData) => {
-      this.image = 'data:image/jpeg;base64,' + imageData;
-      localStorage.setItem('image', `${this.image}`);
+    this.camera.getPicture(options).then(async (imageData) => {
+      const storageRef = imageStorage.ref(imageData);
+      const url = await storageRef.getDownloadURL();
+      console.log(url);
     }, (err) => {
       console.log(err);
     });
@@ -30,9 +34,10 @@ export class CameraService {
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       saveToPhotoAlbum: false
     };
-    this.camera.getPicture(options).then((imageData) => {
-      this.image = 'data:image/jpeg;base64,' + imageData;
-      localStorage.setItem('image-gallery', `${this.image}`);
+    this.camera.getPicture(options).then(async (imageData) => {
+      const storageRef = imageStorage.ref(imageData);
+      const url = await storageRef.getDownloadURL();
+      console.log(url);
     }, (err) => {
       console.log(err);
     });
