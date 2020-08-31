@@ -7,11 +7,12 @@
 <ion-content>
   <ion-item>
     <ion-avatar slot="start">
-      <img *ngIf="avatar" [src]="avatar" alt="">
+      <img *ngIf="!avatar" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="">
+      <img [src]="avatar" alt="">
     </ion-avatar>
     <ion-label>Item Avatar</ion-label>
   </ion-item>
-  <ion-button (click) ='takePhoto()' expand="block">Take Photo</ion-button>
-  <!-- <ion-button (click)='getPhoto()' expand="block">Get Photo</ion-button> -->
+  <ion-button (click)= 'takePhoto()' expand="block">Take Photo</ion-button>
+  <ion-button (click)= 'getPhoto()' expand="block">Get Photo</ion-button>
 </ion-content>
 
